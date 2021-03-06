@@ -92,8 +92,8 @@ def escribe_entidades():
                         entidad["enteDesc"]
                     ))
 
-
-# escribe_sectores()
-# escribe_entidades()
+if __name__ == "__main__": 
+    escribe_sectores()
+    escribe_entidades()
 
 # nomina = download_nomina(ramo=50, unidad_responsable="GYR", start=0, size=100)
