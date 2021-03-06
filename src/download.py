@@ -69,17 +69,17 @@ def download_entidades(ramo: int) -> List[dict]:
 
 
 def escribe_sectores():
-    with open("sectores.csv", "w", encoding="utf8") as writable:
+    with open("data/raw/sectores.csv", "w", encoding="utf8") as writable:
         writer  = csv.writer(writable)
         writer.writerow(["id", "name"])
         for sector in download_sectores():
             writer.writerow((sector["id"], sector["name"]))
 
 def escribe_entidades():
-    with open("entidades.csv", "w") as writable:
+    with open("data/raw/entidades.csv", "w") as writable:
         writer = csv.writer(writable)
         writer.writerow(("sectorId", "entidadId", "unidadResponsable", "nombreCorto", "nombre"))
-        with open("sectores.csv") as readable:
+        with open("data/raw/sectores.csv") as readable:
             reader = csv.DictReader(readable)
             for sector in reader:
                 ramo = sector["id"]
